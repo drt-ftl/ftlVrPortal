@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: dbdd67d7bc0a42c4f8d6c35ef736c66e
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Camera
+    100004: cocpit shield
+    100006: Drive exhaust ring L
+    100008: Drive exhaust ring R
+    100010: Drive left
+    100012: Drive right
+    100014: Empty
+    100016: Front  gear
+    100018: Front wing left
+    100020: Front wing right
+    100022: Gear left
+    100024: Gear right
+    100026: Ground plane
+    100028: gun op 1
+    100030: gun op 2
+    100032: Lamp
+    100034: Lamp.001
+    100036: Lamp.002
+    100038: Lamp.003
+    100040: Lamp.004
+    100042: Main hull
+    100044: Main wing left
+    100046: Main wing right
+    100048: Mesh.001
+    100050: Mesh.021
+    100052: Mesh.022
+    100054: Mesh.023
+    100056: Mesh.024
+    100058: Mesh.025
+    100060: Mesh.026
+    100062: Mesh.027
+    100064: Mesh.028
+    100066: Mesh.030
+    100068: Mesh.031
+    100070: Mesh.032
+    100072: Mesh.033
+    100074: Mesh.034
+    100076: Mesh.035
+    100078: Mesh.036
+    100080: Mesh.037
+    100082: Pilot seat
+    100084: Rocket 001
+    100086: Rocket 002
+    100088: Rocket 003
+    100090: Rocket 004
+    100092: Rocket 005
+    100094: Rocket 006
+    100096: Rocket 008
+    100098: Rocket 009
+    100100: Rocket 010
+    100102: Rocket 011
+    100104: Rocket 012
+    100106: Rocket 013
+    100108: Rocket 014
+    100110: Rocket 015
+    100112: Rocket 016
+    100114: Rocket shield  right
+    100116: Rocket shield left
+    100118: Shield array  L1
+    100120: Shield array  L2
+    100122: Shield array  L3
+    100124: Shield array  L4
+    100126: Shield array  L5
+    100128: Shield array  R1
+    100130: Shield array  R2
+    100132: Shield array  R3
+    100134: Shield array  R4
+    100136: Shield array  R5
+    100138: Under wing left
+    400000: //RootNode
+    400002: Camera
+    400004: cocpit shield
+    400006: Drive exhaust ring L
+    400008: Drive exhaust ring R
+    400010: Drive left
+    400012: Drive right
+    400014: Empty
+    400016: Front  gear
+    400018: Front wing left
+    400020: Front wing right
+    400022: Gear left
+    400024: Gear right
+    400026: Ground plane
+    400028: gun op 1
+    400030: gun op 2
+    400032: Lamp
+    400034: Lamp.001
+    400036: Lamp.002
+    400038: Lamp.003
+    400040: Lamp.004
+    400042: Main hull
+    400044: Main wing left
+    400046: Main wing right
+    400048: Mesh.001
+    400050: Mesh.021
+    400052: Mesh.022
+    400054: Mesh.023
+    400056: Mesh.024
+    400058: Mesh.025
+    400060: Mesh.026
+    400062: Mesh.027
+    400064: Mesh.028
+    400066: Mesh.030
+    400068: Mesh.031
+    400070: Mesh.032
+    400072: Mesh.033
+    400074: Mesh.034
+    400076: Mesh.035
+    400078: Mesh.036
+    400080: Mesh.037
+    400082: Pilot seat
+    400084: Rocket 001
+    400086: Rocket 002
+    400088: Rocket 003
+    400090: Rocket 004
+    400092: Rocket 005
+    400094: Rocket 006
+    400096: Rocket 008
+    400098: Rocket 009
+    400100: Rocket 010
+    400102: Rocket 011
+    400104: Rocket 012
+    400106: Rocket 013
+    400108: Rocket 014
+    400110: Rocket 015
+    400112: Rocket 016
+    400114: Rocket shield  right
+    400116: Rocket shield left
+    400118: Shield array  L1
+    400120: Shield array  L2
+    400122: Shield array  L3
+    400124: Shield array  L4
+    400126: Shield array  L5
+    400128: Shield array  R1
+    400130: Shield array  R2
+    400132: Shield array  R3
+    400134: Shield array  R4
+    400136: Shield array  R5
+    400138: Under wing left
+    2300000: cocpit shield
+    2300002: Drive exhaust ring L
+    2300004: Drive exhaust ring R
+    2300006: Drive left
+    2300008: Drive right
+    2300010: Front  gear
+    2300012: Front wing left
+    2300014: Front wing right
+    2300016: Gear left
+    2300018: Gear right
+    2300020: Ground plane
+    2300022: gun op 1
+    2300024: gun op 2
+    2300026: Main hull
+    2300028: Main wing left
+    2300030: Main wing right
+    2300032: Mesh.001
+    2300034: Mesh.021
+    2300036: Mesh.022
+    2300038: Mesh.023
+    2300040: Mesh.024
+    2300042: Mesh.025
+    2300044: Mesh.026
+    2300046: Mesh.027
+    2300048: Mesh.028
+    2300050: Mesh.030
+    2300052: Mesh.031
+    2300054: Mesh.032
+    2300056: Mesh.033
+    2300058: Mesh.034
+    2300060: Mesh.035
+    2300062: Mesh.036
+    2300064: Mesh.037
+    2300066: Pilot seat
+    2300068: Rocket 001
+    2300070: Rocket 002
+    2300072: Rocket 003
+    2300074: Rocket 004
+    2300076: Rocket 005
+    2300078: Rocket 006
+    2300080: Rocket 008
+    2300082: Rocket 009
+    2300084: Rocket 010
+    2300086: Rocket 011
+    2300088: Rocket 012
+    2300090: Rocket 013
+    2300092: Rocket 014
+    2300094: Rocket 015
+    2300096: Rocket 016
+    2300098: Rocket shield  right
+    2300100: Rocket shield left
+    2300102: Shield array  L1
+    2300104: Shield array  L2
+    2300106: Shield array  L3
+    2300108: Shield array  L4
+    2300110: Shield array  L5
+    2300112: Shield array  R1
+    2300114: Shield array  R2
+    2300116: Shield array  R3
+    2300118: Shield array  R4
+    2300120: Shield array  R5
+    2300122: Under wing left
+    3300000: cocpit shield
+    3300002: Drive exhaust ring L
+    3300004: Drive exhaust ring R
+    3300006: Drive left
+    3300008: Drive right
+    3300010: Front  gear
+    3300012: Front wing left
+    3300014: Front wing right
+    3300016: Gear left
+    3300018: Gear right
+    3300020: Ground plane
+    3300022: gun op 1
+    3300024: gun op 2
+    3300026: Main hull
+    3300028: Main wing left
+    3300030: Main wing right
+    3300032: Mesh.001
+    3300034: Mesh.021
+    3300036: Mesh.022
+    3300038: Mesh.023
+    3300040: Mesh.024
+    3300042: Mesh.025
+    3300044: Mesh.026
+    3300046: Mesh.027
+    3300048: Mesh.028
+    3300050: Mesh.030
+    3300052: Mesh.031
+    3300054: Mesh.032
+    3300056: Mesh.033
+    3300058: Mesh.034
+    3300060: Mesh.035
+    3300062: Mesh.036
+    3300064: Mesh.037
+    3300066: Pilot seat
+    3300068: Rocket 001
+    3300070: Rocket 002
+    3300072: Rocket 003
+    3300074: Rocket 004
+    3300076: Rocket 005
+    3300078: Rocket 006
+    3300080: Rocket 008
+    3300082: Rocket 009
+    3300084: Rocket 010
+    3300086: Rocket 011
+    3300088: Rocket 012
+    3300090: Rocket 013
+    3300092: Rocket 014
+    3300094: Rocket 015
+    3300096: Rocket 016
+    3300098: Rocket shield  right
+    3300100: Rocket shield left
+    3300102: Shield array  L1
+    3300104: Shield array  L2
+    3300106: Shield array  L3
+    3300108: Shield array  L4
+    3300110: Shield array  L5
+    3300112: Shield array  R1
+    3300114: Shield array  R2
+    3300116: Shield array  R3
+    3300118: Shield array  R4
+    3300120: Shield array  R5
+    3300122: Under wing left
+    4300000: Main hull
+    4300002: Front  gear
+    4300004: Front wing left
+    4300006: Front wing right
+    4300008: Pilot seat
+    4300010: gun op 1
+    4300012: gun op 2
+    4300014: cocpit shield
+    4300016: Main wing left
+    4300018: Shield array  L1
+    4300020: Shield array  L2
+    4300022: Shield array  L3
+    4300024: Shield array  L4
+    4300026: Shield array  L5
+    4300028: Rocket shield left
+    4300030: Rocket 015
+    4300032: Rocket 013
+    4300034: Rocket 011
+    4300036: Rocket 009
+    4300038: Rocket 001
+    4300040: Rocket 003
+    4300042: Mesh.001
+    4300044: Rocket 005
+    4300046: Drive left
+    4300048: Drive exhaust ring L
+    4300050: Mesh.028
+    4300052: Mesh.027
+    4300054: Mesh.026
+    4300056: Mesh.025
+    4300058: Mesh.024
+    4300060: Mesh.023
+    4300062: Mesh.022
+    4300064: Mesh.021
+    4300066: Under wing left
+    4300068: Gear right
+    4300070: Gear left
+    4300072: Main wing right
+    4300074: Shield array  R1
+    4300076: Shield array  R2
+    4300078: Shield array  R3
+    4300080: Shield array  R4
+    4300082: Shield array  R5
+    4300084: Rocket shield  right
+    4300086: Rocket 002
+    4300088: Rocket 004
+    4300090: Rocket 006
+    4300092: Rocket 008
+    4300094: Rocket 016
+    4300096: Rocket 014
+    4300098: Rocket 012
+    4300100: Rocket 010
+    4300102: Drive right
+    4300104: Mesh.037
+    4300106: Mesh.036
+    4300108: Mesh.035
+    4300110: Mesh.034
+    4300112: Mesh.033
+    4300114: Mesh.032
+    4300116: Mesh.031
+    4300118: Mesh.030
+    4300120: Drive exhaust ring R
+    4300122: Ground plane
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

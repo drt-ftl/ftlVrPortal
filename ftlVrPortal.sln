@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{AFA22D00-A7C4-486B-A52C-E100E1407866}") = "ftlVrPortal", "Assembly-CSharp-firstpass.csproj", "{27B5D809-6008-74CF-C008-7A094525144F}"
+EndProject
+Project("{AFA22D00-A7C4-486B-A52C-E100E1407866}") = "ftlVrPortal", "Assembly-CSharp.csproj", "{58F07B34-3074-7647-F902-3FB54B495191}"
+EndProject
+Project("{AFA22D00-A7C4-486B-A52C-E100E1407866}") = "ftlVrPortal", "Assembly-CSharp-Editor.csproj", "{88356C31-D3D1-6B83-4765-AFBA02242B47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27B5D809-6008-74CF-C008-7A094525144F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B5D809-6008-74CF-C008-7A094525144F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B5D809-6008-74CF-C008-7A094525144F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B5D809-6008-74CF-C008-7A094525144F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F07B34-3074-7647-F902-3FB54B495191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F07B34-3074-7647-F902-3FB54B495191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F07B34-3074-7647-F902-3FB54B495191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F07B34-3074-7647-F902-3FB54B495191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88356C31-D3D1-6B83-4765-AFBA02242B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88356C31-D3D1-6B83-4765-AFBA02242B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88356C31-D3D1-6B83-4765-AFBA02242B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88356C31-D3D1-6B83-4765-AFBA02242B47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

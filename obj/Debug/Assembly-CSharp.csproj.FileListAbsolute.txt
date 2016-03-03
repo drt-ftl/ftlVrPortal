@@ -1,0 +1,71 @@
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\System.Windows.Forms.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEditor.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEngine.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEngine.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEditor.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\obj\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus\obj\Debug\Assembly-CSharp.pdb
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\System.Windows.Forms.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEditor.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEngine.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEngine.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEditor.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\obj\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\ftlOculus\VAME_Oculus - Copy\obj\Debug\Assembly-CSharp.pdb
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\System.Windows.Forms.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEditor.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEngine.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEngine.xml
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEditor.xml
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\obj\Debug\Assembly-CSharp.dll
+C:\Users\David\Documents\GitHub\ftlOculus\ftlVrPortal\obj\Debug\Assembly-CSharp.pdb
