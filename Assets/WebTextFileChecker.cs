@@ -99,14 +99,22 @@ public class WebTextFileChecker : MonoBehaviour
         }
         else
         {
-            modelTxt = w.text;
-            var lines = modelTxt.Split("\r\n"[0]);
-
-
-            foreach (var line in lines)
+            var line = w.text;
+            
+                line = line.Replace(" facet", "|facet");
+                line = line.Replace("outer loop", "|outer loop");
+                line = line.Replace("endloop", "|endloop");
+                line = line.Replace("vertex", "|vertex");
+                line = line.Replace("endfacet", "|endfacet");
+                var _lines = line.Split('|');
+                foreach (var _line in _lines)
+                {
+                    camScript.linesOfStl.Add(_line);
+                }
+            foreach (var l in camScript.linesOfStl)
             {
-                Camera.main.GetComponent<camScript>().scanSTL(line);
-            }
+                Camera.main.GetComponent<camScript>().scanSTL(l);
+            }            
             GameObject.Find("MESH").GetComponent<MakeMesh>().MergeMesh();
         }
         StopCheck();

@@ -131,9 +131,9 @@ public class phpConnector : MonoBehaviour
         StopCheck();
     }
 
-    public void StopGather()
+    public void StopGatherRemoteFileList()
     {
-        StopCoroutine(GetRemoteTextFile(currentUrl));
+        StopCoroutine(GatherRemoteFileList(currentUrl));
     }
 
     private IEnumerator GatherRemoteFileList(string url)
@@ -156,7 +156,6 @@ public class phpConnector : MonoBehaviour
                 if (line == "") continue;
                 if (!line.EndsWith("|EOL"))
                     GameObject.Find("NEXT").GetComponent<Button>().interactable = true;
-                print("line: " + line);
                 var p = line.Split('*');
                 var m1 = p[0].Split('/');
                 var mCount = m1.Length;
@@ -176,7 +175,12 @@ public class phpConnector : MonoBehaviour
             }
             Camera.main.GetComponent<camScript>().PhpBrowse(modelPaths, imagePaths);
         }
-        StopGather();
+        StopGatherRemoteFileList();
+    }
+
+    public void StopGatherRemoteUserList()
+    {
+        StopCoroutine(GatherRemoteUserList(currentUrl));
     }
 
     private IEnumerator GatherRemoteUserList(string url)
@@ -210,6 +214,6 @@ public class phpConnector : MonoBehaviour
             }
             Camera.main.GetComponent<camScript>().PhpBrowseUsers(usernames, imagePaths);
         }
-        StopGather();
+        StopGatherRemoteUserList();
     }
 }

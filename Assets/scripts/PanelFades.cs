@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PanelFades : MonoBehaviour {
 
-
     private float factor = 0.1f;
 
     public bool Visible()
@@ -12,6 +11,7 @@ public class PanelFades : MonoBehaviour {
             return false;
         return true;
     }
+
 
     public void FadeOut()
     {

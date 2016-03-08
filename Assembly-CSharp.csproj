@@ -66,6 +66,7 @@
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+     <None Include="Assets\prototype_textures\readme.txt" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
      <None Include="Assets\Wispy Sky\ReadMe.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
@@ -80,6 +81,9 @@
  </Reference>
  <Reference Include="System.Windows.Forms">
  <HintPath>C:/Users/David/Documents/GitHub/ftlOculus/ftlVrPortal/Assets/Plugins/System.Windows.Forms.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Drawing">
+ <HintPath>C:/Users/David/Documents/GitHub/ftlOculus/ftlVrPortal/Assets/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

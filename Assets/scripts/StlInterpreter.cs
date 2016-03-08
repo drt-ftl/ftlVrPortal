@@ -45,7 +45,7 @@ public class StlInterpreter
         if (float.TryParse(xStrSplit[0], out x))
         {
             float xE;
-            if (float.TryParse(xStrSplit[1], out xE))
+            if (xStrSplit.Length > 1 && float.TryParse(xStrSplit[1], out xE))
                 x *= (Mathf.Pow(10f, xE));
         }
 
@@ -53,7 +53,7 @@ public class StlInterpreter
         if (float.TryParse(yStrSplit[0], out y))
         {
             float yE;
-            if (float.TryParse(yStrSplit[1], out yE))
+            if (yStrSplit.Length > 1 && float.TryParse(yStrSplit[1], out yE))
                 y *= (Mathf.Pow(10f, yE));
         }
 
@@ -61,7 +61,7 @@ public class StlInterpreter
         if (float.TryParse(zStrSplit[0], out z))
         {
             float zE;
-            if (float.TryParse(zStrSplit[1], out zE))
+            if (zStrSplit.Length > 1 && float.TryParse(zStrSplit[1], out zE))
                 z *= (Mathf.Pow(10f, zE));
         }
         Normal = new Vector3(x, y, z);
@@ -98,7 +98,7 @@ public class StlInterpreter
 			if (float.TryParse(xStrSplit[0], out x))
 			{
 				float xE;
-				if (float.TryParse(xStrSplit[1], out xE))
+				if (xStrSplit.Length > 1 && float.TryParse(xStrSplit[1], out xE))
 					x *= (Mathf.Pow (10f, xE));
 			}
 			
@@ -106,7 +106,7 @@ public class StlInterpreter
 			if (float.TryParse(yStrSplit[0], out y))
 			{
 				float yE;
-				if (float.TryParse(yStrSplit[1], out yE))
+				if (yStrSplit.Length > 1 && float.TryParse(yStrSplit[1], out yE))
 					y *= (Mathf.Pow (10f, yE));
 			}
 			
@@ -114,7 +114,7 @@ public class StlInterpreter
 			if (float.TryParse(zStrSplit[0], out z))
 			{
 				float zE;
-				if (float.TryParse(zStrSplit[1], out zE))
+				if (zStrSplit.Length > 1 && float.TryParse(zStrSplit[1], out zE))
 					z *= (Mathf.Pow (10f, zE));
 			}
 			var newVertex = new Vector3 (x,y,z) * LoadFile.stlScale;

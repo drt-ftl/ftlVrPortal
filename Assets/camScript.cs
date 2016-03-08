@@ -4,8 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
+
 public class camScript : MonoBehaviour
 {
+    public static List<string> linesOfStl = new List<string>();
     public GameObject button;
     public GameObject onlineButton;
     public GameObject userButton;
@@ -15,6 +17,7 @@ public class camScript : MonoBehaviour
     public Dropdown skyboxDD;
     public Dropdown landscapeDD;
     public Dropdown propDD;
+    public Slider ambientI;
     public static string baseUrl = "http://www.ftllabscorp.com/VR/";
     private GameObject _cursor;
     public static MakeMesh MM;
@@ -147,7 +150,9 @@ public class camScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             ShowPanel();
+        }
         if (Input.GetKey(KeyCode.Escape))
             Application.Quit();
         if (Input.GetKeyDown(KeyCode.L))
@@ -172,14 +177,14 @@ public class camScript : MonoBehaviour
             || folderWindow.GetComponent<PanelFades>().Visible() 
             || sceneWindow.GetComponent<PanelFades>().Visible()
             || loginPanel.GetComponent<PanelFades>().Visible())
-        {
-            mainMenu.GetComponent<PanelFades>().FadeOut();
-            folderWindow.GetComponent<PanelFades>().FadeOut();
-            sceneWindow.GetComponent<PanelFades>().FadeOut();
-            loginPanel.GetComponent<PanelFades>().FadeOut();
-        }
-        else
-            mainMenu.GetComponent<PanelFades>().FadeIn();
+            {
+                mainMenu.GetComponent<PanelFades>().FadeOut();
+                folderWindow.GetComponent<PanelFades>().FadeOut();
+                sceneWindow.GetComponent<PanelFades>().FadeOut();
+                loginPanel.GetComponent<PanelFades>().FadeOut();
+            }
+            else
+                mainMenu.GetComponent<PanelFades>().FadeIn();
     }
 
     public void Login()
@@ -383,11 +388,26 @@ public class camScript : MonoBehaviour
         stlInterpreter.ClearAll();
         print("LOADING");
         var reader = new StreamReader(fileName);
-
+        var wholeThing = "";
         while (!reader.EndOfStream)
         {
-            string line = reader.ReadLine();
-            scanSTL(line);
+            string line = reader.ReadToEnd();
+            print(line);
+            line = line.Replace("facet", "|facet");
+            line = line.Replace("outer loop", "|outer loop");
+            line = line.Replace("endloop", "|end loop");
+            line = line.Replace("vertex", "|vertex");
+            line = line.Replace("endfacet", "|endfacet");
+            var _lines = line.Split('|');
+            foreach (var _line in _lines)
+            {
+                linesOfStl.Add(_line);
+                print(_line);
+            }
+        }
+        foreach (var l in linesOfStl)
+        {
+            scanSTL(l);
         }
         GameObject.Find("MESH").GetComponent<MakeMesh>().MergeMesh();
     }
@@ -532,5 +552,11 @@ public class camScript : MonoBehaviour
             else
                 browseFiles();
         }
+    }
+
+    public void AmbientIntensity ()
+    {
+        var i = ambientI.value;
+        RenderSettings.ambientIntensity = i;
     }
 }
