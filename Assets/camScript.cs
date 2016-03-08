@@ -158,6 +158,8 @@ public class camScript : MonoBehaviour
             Application.Quit();
         if (Input.GetKeyDown(KeyCode.L))
             ShowLogin();
+        if (Input.GetKeyDown(KeyCode.S))
+            ShowEditScene();
     }
 
 	void OnGUI()
@@ -174,10 +176,7 @@ public class camScript : MonoBehaviour
     {
         if (!mainMenu.active)
             mainMenu.active = true;
-        if (mainMenu.GetComponent<PanelFades>().Visible() 
-            || folderWindow.GetComponent<PanelFades>().Visible() 
-            || sceneWindow.GetComponent<PanelFades>().Visible()
-            || loginPanel.GetComponent<PanelFades>().Visible())
+        if (mainMenu.GetComponent<PanelFades>().Visible())
             {
                 mainMenu.GetComponent<PanelFades>().FadeOut();
                 folderWindow.GetComponent<PanelFades>().FadeOut();
@@ -185,17 +184,17 @@ public class camScript : MonoBehaviour
                 loginPanel.GetComponent<PanelFades>().FadeOut();
             }
             else
+            {
                 mainMenu.GetComponent<PanelFades>().FadeIn();
+                folderWindow.GetComponent<PanelFades>().FadeOut();
+                sceneWindow.GetComponent<PanelFades>().FadeOut();
+                loginPanel.GetComponent<PanelFades>().FadeOut();
+            }
     }
 
     void ShowLogin()
     {
-        if (!mainMenu.active)
-            mainMenu.active = true;
-        if (mainMenu.GetComponent<PanelFades>().Visible()
-            || folderWindow.GetComponent<PanelFades>().Visible()
-            || sceneWindow.GetComponent<PanelFades>().Visible()
-            || loginPanel.GetComponent<PanelFades>().Visible())
+        if (loginPanel.GetComponent<PanelFades>().Visible())
         {
             mainMenu.GetComponent<PanelFades>().FadeOut();
             folderWindow.GetComponent<PanelFades>().FadeOut();
@@ -203,7 +202,30 @@ public class camScript : MonoBehaviour
             loginPanel.GetComponent<PanelFades>().FadeOut();
         }
         else
+        {
+            mainMenu.GetComponent<PanelFades>().FadeOut();
+            folderWindow.GetComponent<PanelFades>().FadeOut();
+            sceneWindow.GetComponent<PanelFades>().FadeOut();
             loginPanel.GetComponent<PanelFades>().FadeIn();
+        }
+    }
+
+    void ShowEditScene()
+    {
+        if (sceneWindow.GetComponent<PanelFades>().Visible())
+        {
+            mainMenu.GetComponent<PanelFades>().FadeOut();
+            folderWindow.GetComponent<PanelFades>().FadeOut();
+            sceneWindow.GetComponent<PanelFades>().FadeOut();
+            loginPanel.GetComponent<PanelFades>().FadeOut();
+        }
+        else
+        {
+            mainMenu.GetComponent<PanelFades>().FadeOut();
+            folderWindow.GetComponent<PanelFades>().FadeOut();
+            sceneWindow.GetComponent<PanelFades>().FadeIn();
+            loginPanel.GetComponent<PanelFades>().FadeOut();
+        }
     }
 
     public void Login()
