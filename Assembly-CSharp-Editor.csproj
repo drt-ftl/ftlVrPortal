@@ -85,6 +85,9 @@
  <Reference Include="UnityEditor.TreeEditor">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
+ <Reference Include="System.Drawing">
+ <HintPath>C:/Users/David/Documents/GitHub/ftlOculus/ftlVrPortal/Assets/Plugins/System.Drawing.dll</HintPath>
+ </Reference>
  <Reference Include="System.Windows.Forms">
  <HintPath>C:/Users/David/Documents/GitHub/ftlOculus/ftlVrPortal/Assets/Plugins/System.Windows.Forms.dll</HintPath>
  </Reference>
@@ -93,9 +96,6 @@
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="System.Drawing">
- <HintPath>C:/Users/David/Documents/GitHub/ftlOculus/ftlVrPortal/Assets/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

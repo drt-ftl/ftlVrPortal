@@ -53,7 +53,6 @@ public class ButtonScript : MonoBehaviour
         var _name = Path.GetFileName(name.Trim());
         var shortName = _name.Substring(0, _name.LastIndexOf(".STL")).Trim();
         var url = "file:" + Application.dataPath + "/Models/" + shortName + ".png";
-        print(url);
         WWW w = new WWW(url);
         yield return w;
         if (w.texture != null)

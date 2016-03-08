@@ -17,6 +17,9 @@ public class phpConnector : MonoBehaviour
     public static string modelTxt = "";
     string currentUrl = "";
 
+    public void ClearAll()
+    {
+    }
 
     public List<string> ListFiles(string urlRoot)
     {
@@ -86,7 +89,6 @@ public class phpConnector : MonoBehaviour
     public void GetModelsList(string type, string arguments, int page, string _u, string _pw)
     {
         var url = camScript.baseUrl + "unityAccess.php?title=" + type + "|" + arguments + "|" + page.ToString() + "|" + _u + "|" + _pw;
-        print(url);
         currentUrl = url;
         StartCoroutine(GatherRemoteFileList(url));
     }

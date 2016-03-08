@@ -18,6 +18,10 @@ public class camScript : MonoBehaviour
     public Dropdown landscapeDD;
     public Dropdown propDD;
     public Slider ambientI;
+    public Slider translateX;
+    public Slider translateY;
+    public Slider translateZ;
+    public Slider scale_mesh;
     public static string baseUrl = "http://www.ftllabscorp.com/VR/";
     private GameObject _cursor;
     public static MakeMesh MM;
@@ -106,8 +110,6 @@ public class camScript : MonoBehaviour
         materialDD.options = options;
 
         options = new List<Dropdown.OptionData>(landscapes.Count);
-        var none = new Dropdown.OptionData("None");
-        options.Add(none);
         foreach (var landscape in landscapes)
         {
             var newOption = new Dropdown.OptionData(landscape.name);
@@ -116,7 +118,6 @@ public class camScript : MonoBehaviour
         landscapeDD.options = options;
 
         options = new List<Dropdown.OptionData>(props.Count);
-        options.Add(none);
         foreach (var prop in props)
         {
             var newOption = new Dropdown.OptionData(prop.name);
@@ -156,7 +157,7 @@ public class camScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
             Application.Quit();
         if (Input.GetKeyDown(KeyCode.L))
-            loginPanel.GetComponent<PanelFades>().FadeIn();
+            ShowLogin();
     }
 
 	void OnGUI()
@@ -187,6 +188,24 @@ public class camScript : MonoBehaviour
                 mainMenu.GetComponent<PanelFades>().FadeIn();
     }
 
+    void ShowLogin()
+    {
+        if (!mainMenu.active)
+            mainMenu.active = true;
+        if (mainMenu.GetComponent<PanelFades>().Visible()
+            || folderWindow.GetComponent<PanelFades>().Visible()
+            || sceneWindow.GetComponent<PanelFades>().Visible()
+            || loginPanel.GetComponent<PanelFades>().Visible())
+        {
+            mainMenu.GetComponent<PanelFades>().FadeOut();
+            folderWindow.GetComponent<PanelFades>().FadeOut();
+            sceneWindow.GetComponent<PanelFades>().FadeOut();
+            loginPanel.GetComponent<PanelFades>().FadeOut();
+        }
+        else
+            loginPanel.GetComponent<PanelFades>().FadeIn();
+    }
+
     public void Login()
     {
         USERNAME = usernameBox.text;
@@ -212,6 +231,7 @@ public class camScript : MonoBehaviour
         var filenamesList = new List<string>();
         foreach(var a in filenamesArray)
         {
+            var aa= a.Replace("\\","/");
             filenamesList.Add(a);
         }
         CommonBrowse(filenamesList, false);
@@ -375,34 +395,30 @@ public class camScript : MonoBehaviour
 
             fileButtons.Add(newButton);
         }
-
-        //DRT THURSDAY ADDING BBT, ARG, PG
-        //NEED TO HAVE PHP PAGE SEND NOTICE IF LAST PAGE TO DISABLE NEXT BUTTON
-
+        
         if (PG == 0)
             GameObject.Find("PREV").GetComponent<Button>().interactable = false;
     }
 
     public void loadFile(string fileName)
     {
+        print(fileName);
         stlInterpreter.ClearAll();
-        print("LOADING");
+        linesOfStl.Clear();
+        phpConn.ClearAll();
         var reader = new StreamReader(fileName);
-        var wholeThing = "";
         while (!reader.EndOfStream)
         {
             string line = reader.ReadToEnd();
-            print(line);
             line = line.Replace("facet", "|facet");
             line = line.Replace("outer loop", "|outer loop");
-            line = line.Replace("endloop", "|end loop");
+            line = line.Replace("endloop", "|endloop");
             line = line.Replace("vertex", "|vertex");
             line = line.Replace("endfacet", "|endfacet");
             var _lines = line.Split('|');
             foreach (var _line in _lines)
             {
                 linesOfStl.Add(_line);
-                print(_line);
             }
         }
         foreach (var l in linesOfStl)
@@ -415,8 +431,9 @@ public class camScript : MonoBehaviour
     public void loadFileFromWeb(string fileName)
     {
         stlInterpreter.ClearAll();
+        linesOfStl.Clear();
+        phpConn.ClearAll();
         OnlineBrowser.GetFile(fileName);
-        print(fileName);
     }
 
     public void scanSTL(string _line)
@@ -558,5 +575,39 @@ public class camScript : MonoBehaviour
     {
         var i = ambientI.value;
         RenderSettings.ambientIntensity = i;
+    }
+
+    public void Scale()
+    {
+        var m = GameObject.Find("MESH");
+        var s = scale_mesh.value;
+        m.transform.localScale = Vector3.one * s;
+    }
+
+    public void Trans_X()
+    {
+        var m = GameObject.Find("MESH");
+        var s = translateX.value;
+        var pos = m.transform.position;
+        pos.x = s;
+        m.transform.position = pos;
+    }
+
+    public void Trans_Y()
+    {
+        var m = GameObject.Find("MESH");
+        var s = translateY.value;
+        var pos = m.transform.position;
+        pos.y = s;
+        m.transform.position = pos;
+    }
+
+    public void Trans_Z()
+    {
+        var m = GameObject.Find("MESH");
+        var s = translateZ.value;
+        var pos = m.transform.position;
+        pos.z = s;
+        m.transform.position = pos;
     }
 }

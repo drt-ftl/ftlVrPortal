@@ -37,6 +37,8 @@ public class MakeMesh : MonoBehaviour
         normals.Clear();
         colors.Clear();
         uvs.Clear();
+        d = 0;
+        currentMaterial = 0;
         //tris_b.Clear();
         //verts_b.Clear();
         //normals_b.Clear();
