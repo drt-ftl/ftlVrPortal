@@ -99,8 +99,17 @@ public class WebTextFileChecker : MonoBehaviour
         }
         else
         {
-            var line = w.text;
-            
+            var a = w.bytes;
+            if (CheckForStlBinary(a))
+            {
+                var parseStlBinary = new Parse_StlBinary("", camScript.MM, a);
+            }
+
+            else
+            {
+                print("FALZ");
+                var line = w.text;
+
                 line = line.Replace(" facet", "|facet");
                 line = line.Replace("outer loop", "|outer loop");
                 line = line.Replace("endloop", "|endloop");
@@ -111,12 +120,38 @@ public class WebTextFileChecker : MonoBehaviour
                 {
                     camScript.linesOfStl.Add(_line);
                 }
-            foreach (var l in camScript.linesOfStl)
-            {
-                Camera.main.GetComponent<camScript>().scanSTL(l);
-            }            
-            GameObject.Find("MESH").GetComponent<MakeMesh>().MergeMesh();
+                foreach (var l in camScript.linesOfStl)
+                {
+                    Camera.main.GetComponent<camScript>().scanSTL(l);
+                }
+                GameObject.Find("MESH").GetComponent<MakeMesh>().MergeMesh();
+            }
         }
         StopCheck();
+    }
+
+    public bool CheckForStlBinary(byte[] _bytes)
+    {
+        var _isBinary = false;
+        var readBytesArray = _bytes;
+        var numBytes = readBytesArray.Length;
+        if (numBytes < 84)
+            return false;
+        var numFacets = new byte[4];
+        for (int i = 80; i < 84; i++)
+        {
+            numFacets[i - 80] = readBytesArray[i];
+        }
+        var num_facets = BitConverter.ToInt32(numFacets, 0);
+        var predictedNumFacets = (84 + 50 * num_facets);
+        if (numBytes == predictedNumFacets)
+        {
+            _isBinary = true;
+        }
+        else
+        {
+            _isBinary = false;
+        }
+        return _isBinary;
     }
 }

@@ -7,9 +7,10 @@ public class CameraView : MonoBehaviour
     Vector3 lastMp;
 
 
-	void Start () {
-	
-	}
+	void Start ()
+    {
+        lastMp = Input.mousePosition;
+    }
 	
 	void Update ()
     {
@@ -26,12 +27,12 @@ public class CameraView : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            transform.Rotate(transform.up, xFactor);
-            transform.Rotate(transform.right, yFactor);
+            GameObject.Find("Camera Rig").transform.Rotate(transform.up, xFactor);
+            GameObject.Find("Camera Rig").transform.Rotate(transform.right, yFactor);
         }
         var zoom = Input.mouseScrollDelta.y * 0.3f;
         var pos = GameObject.Find("Camera Rig").transform.localPosition;
-        pos.z += zoom;
+        pos.z += zoom; 
         GameObject.Find("Camera Rig").transform.localPosition = pos;
         lastMp = mp;
     }

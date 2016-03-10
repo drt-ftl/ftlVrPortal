@@ -218,4 +218,29 @@ public class phpConnector : MonoBehaviour
         }
         StopGatherRemoteUserList();
     }
+
+    public bool CheckForStlBinary (string _path)
+    {
+        var _isBinary = false;
+        var readBytesArray = File.ReadAllBytes(_path);
+        var numBytes = readBytesArray.Length;
+        if (numBytes < 84)
+            return false;
+        var numFacets = new byte[4];
+        for (int i = 80; i < 84; i++)
+        {
+            numFacets[i - 80] = readBytesArray[i];
+        }
+        var num_facets = BitConverter.ToInt32(numFacets, 0);
+        var predictedNumBytes = (84 + 50 * num_facets);
+        if (numBytes == predictedNumBytes)
+        {
+            _isBinary = true;
+        }
+        else
+        {
+            _isBinary = false;
+        }
+        return _isBinary;
+    }
 }

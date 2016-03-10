@@ -97,19 +97,31 @@ public class MakeMesh : MonoBehaviour
     //    return norm;
     //}
 
-    public void AddTriangle (Vector3 p1, Vector3 p2, Vector3 p3, Vector3 norm)
+    public void AddTriangle (Vector3 p1, Vector3 p2, Vector3 p3, Vector3 norm, bool _binary)
     {
         var count = tris.Count;
 
         tris.Add(count);
         tris.Add(count + 1);
         tris.Add(count + 2);
-        verts.Add(p1);
-        verts.Add(p2);
-        verts.Add(p3);
-        uvs.Add(p1);
-        uvs.Add(p2);
-        uvs.Add(p3);
+        if (_binary)
+        {
+            verts.Add(p3);
+            verts.Add(p2);
+            verts.Add(p1);
+            uvs.Add(p3);
+            uvs.Add(p2);
+            uvs.Add(p1);
+        }
+        else
+        {
+            verts.Add(p1);
+            verts.Add(p2);
+            verts.Add(p3);
+            uvs.Add(p1);
+            uvs.Add(p2);
+            uvs.Add(p3);
+        }
         for (int i = 0; i < 3; i++)
             normals.Add(norm);
         for (int i = 0; i < 3; i++)

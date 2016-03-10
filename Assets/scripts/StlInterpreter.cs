@@ -76,7 +76,7 @@ public class StlInterpreter
 		try
 		{
             var mm = GameObject.Find("MESH").GetComponent<MakeMesh>();
-            mm.AddTriangle(camScript.currentVertices[0], camScript.currentVertices[1], camScript.currentVertices[2], Normal);
+            mm.AddTriangle(camScript.currentVertices[0], camScript.currentVertices[1], camScript.currentVertices[2], Normal, false);
             camScript.currentVertices.Clear ();
 		}
 		catch{}

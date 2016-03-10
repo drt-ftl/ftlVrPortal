@@ -57,6 +57,7 @@ public class camScript : MonoBehaviour
     bool loggedIn = false;
     public static string USERNAME = "";
     public static string PASSWORD = "";
+    public static Parse_StlBinary parseStlBinary;
 
     void Start ()
     {
@@ -93,6 +94,8 @@ public class camScript : MonoBehaviour
             props[i] = p;
         }
 
+        var none = new Dropdown.OptionData();
+        none.text = "None";
         var options = new List<Dropdown.OptionData>(skyboxes.Count);
         foreach (var skybox in skyboxes)
         {
@@ -110,6 +113,7 @@ public class camScript : MonoBehaviour
         materialDD.options = options;
 
         options = new List<Dropdown.OptionData>(landscapes.Count);
+        options.Add(none);
         foreach (var landscape in landscapes)
         {
             var newOption = new Dropdown.OptionData(landscape.name);
@@ -118,6 +122,7 @@ public class camScript : MonoBehaviour
         landscapeDD.options = options;
 
         options = new List<Dropdown.OptionData>(props.Count);
+        options.Add(none);
         foreach (var prop in props)
         {
             var newOption = new Dropdown.OptionData(prop.name);
@@ -145,7 +150,7 @@ public class camScript : MonoBehaviour
         });
 
         RenderSettings.skybox = skyboxes[0];
-        landscapes[0].SetActive(true);
+        //landscapes[1].SetActive(true);
     }
 
     void Update()
@@ -424,30 +429,36 @@ public class camScript : MonoBehaviour
 
     public void loadFile(string fileName)
     {
-        print(fileName);
         stlInterpreter.ClearAll();
         linesOfStl.Clear();
         phpConn.ClearAll();
-        var reader = new StreamReader(fileName);
-        while (!reader.EndOfStream)
+        if (phpConn.CheckForStlBinary(fileName))
         {
-            string line = reader.ReadToEnd();
-            line = line.Replace("facet", "|facet");
-            line = line.Replace("outer loop", "|outer loop");
-            line = line.Replace("endloop", "|endloop");
-            line = line.Replace("vertex", "|vertex");
-            line = line.Replace("endfacet", "|endfacet");
-            var _lines = line.Split('|');
-            foreach (var _line in _lines)
+            parseStlBinary = new Parse_StlBinary(fileName, MM,null);
+        }
+        else
+        {
+            var reader = new StreamReader(fileName);
+            while (!reader.EndOfStream)
             {
-                linesOfStl.Add(_line);
+                string line = reader.ReadToEnd();
+                line = line.Replace("facet", "|facet");
+                line = line.Replace("outer loop", "|outer loop");
+                line = line.Replace("endloop", "|endloop");
+                line = line.Replace("vertex", "|vertex");
+                line = line.Replace("endfacet", "|endfacet");
+                var _lines = line.Split('|');
+                foreach (var _line in _lines)
+                {
+                    linesOfStl.Add(_line);
+                }
             }
+            foreach (var l in linesOfStl)
+            {
+                scanSTL(l);
+            }
+            GameObject.Find("MESH").GetComponent<MakeMesh>().MergeMesh();
         }
-        foreach (var l in linesOfStl)
-        {
-            scanSTL(l);
-        }
-        GameObject.Find("MESH").GetComponent<MakeMesh>().MergeMesh();
     }
 
     public void loadFileFromWeb(string fileName)
