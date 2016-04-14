@@ -30,7 +30,6 @@ public class MakeMesh : MonoBehaviour
     {
         GO = false;
         mesh.Clear();
-        //mesh_b.Clear();
 
         tris.Clear();
         verts.Clear();
@@ -39,9 +38,6 @@ public class MakeMesh : MonoBehaviour
         uvs.Clear();
         d = 0;
         currentMaterial = 0;
-        //tris_b.Clear();
-        //verts_b.Clear();
-        //normals_b.Clear();
         Min = Vector3.one * 1000;
         Max = Vector3.one * -1000;
     }
@@ -62,20 +58,6 @@ public class MakeMesh : MonoBehaviour
         rnd.material = material;
         rnd.receiveShadows = true;
         rnd.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-
-        //back = GameObject.Find("BACK");
-        //if (back.GetComponent<MeshFilter>() == null)
-        //    back.AddComponent<MeshFilter>();
-        //if (back.GetComponent<MeshRenderer>() == null)
-        //    back.AddComponent<MeshRenderer>();
-
-        //mesh_b = back.GetComponent<MeshFilter>().mesh;
-        //mesh_b.Clear();
-
-        //var rnd_b = back.GetComponent<MeshRenderer>();
-        //rnd_b.material = material;
-        //rnd_b.receiveShadows = true;
-        //rnd_b.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
         GO = true;
     }
 
@@ -89,13 +71,6 @@ public class MakeMesh : MonoBehaviour
         var norm = Vector3.Normalize(dir);
         return norm;
     }
-
-    //public Vector3 NormalBack (Vector3 p1, Vector3 p2, Vector3 p3)
-    //{
-    //    var dir = Vector3.Cross(p3 - p1, p3 - p2);
-    //    var norm = Vector3.Normalize(dir);
-    //    return norm;
-    //}
 
     public void AddTriangle (Vector3 p1, Vector3 p2, Vector3 p3, Vector3 norm, bool _binary)
     {
@@ -126,15 +101,6 @@ public class MakeMesh : MonoBehaviour
             normals.Add(norm);
         for (int i = 0; i < 3; i++)
             colors.Add(InspectorL.stlColor);
-
-        //tris_b.Add(count);
-        //tris_b.Add(count + 1);
-        //tris_b.Add(count + 2);
-        //verts_b.Add(p1);
-        //verts_b.Add(p2);
-        //verts_b.Add(p3);
-        //for (int i = 0; i < 3; i++)
-        //    normals_b.Add(-norm);
     }
 
     public Vector3 centroid
@@ -161,11 +127,21 @@ public class MakeMesh : MonoBehaviour
             Max = max;
             Min = min;
         }
+        var delta = Max - Min;
+        var sc = 2f;
+        if (delta.x > delta.y && delta.x > delta.z)
+            sc = 2 / delta.x;
+        else if (delta.y > delta.x && delta.y > delta.z)
+            sc = 2 / delta.y;
+        else
+            sc = 2 / delta.z;
         var count = verts.Count;
         for (int i = 0; i < count; i++)
         {
             verts[i] -= centroid;
-            //verts_b[i] -= centroid;
+            verts[i] *= sc;
+            uvs[i] -= new Vector2(centroid.x, centroid.y);
+            uvs[i] *= sc;
         }
         mesh.vertices = verts.ToArray();
         mesh.triangles = tris.ToArray();
@@ -174,19 +150,7 @@ public class MakeMesh : MonoBehaviour
         mesh.colors = colors.ToArray();
 
         mesh.RecalculateNormals();
-        mesh.Optimize();
-
-
-        //mesh_b.vertices = verts_b.ToArray();
-        //mesh_b.triangles = tris_b.ToArray();
-        //mesh_b.normals = normals_b.ToArray();
-        //mesh_b.uv = uvs.ToArray();
-        //mesh_b.colors = colors.ToArray();
-
-        //mesh_b.RecalculateNormals();
-        //mesh_b.Optimize();
-
-        
+        mesh.Optimize();        
         camScript.folderWindow.GetComponent<PanelFades>().FadeOut();
         Camera.main.GetComponent<camScript>().mainMenu.GetComponent<PanelFades>().FadeOut();
     }

@@ -51,7 +51,11 @@ public class ButtonScript : MonoBehaviour
     {
         thumbnailObject = GetComponentInChildren<thumbnail>().gameObject;
         var _name = Path.GetFileName(name.Trim());
-        var shortName = _name.Substring(0, _name.ToUpper().LastIndexOf(".STL")).Trim();
+        var shortName = "";
+        if (_name.ToLower().EndsWith(".stl"))
+            shortName = _name.Substring(0, _name.ToUpper().LastIndexOf(".STL")).Trim();
+        if (_name.ToLower().EndsWith(".obj"))
+            shortName = _name.Substring(0, _name.ToUpper().LastIndexOf(".OBJ")).Trim();
         var url = "file:" + Application.dataPath + "/Models/" + shortName + ".png";
         WWW w = new WWW(url);
         yield return w;

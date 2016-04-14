@@ -7,6 +7,11 @@ using System.IO;
 
 public class camScript : MonoBehaviour
 {
+    public static List<Triangle> triangleList = new List<Triangle>();
+    public static List<Triangle> tempTriangleList = new List<Triangle>();
+    public static Vector3 tmpMin = Vector3.one * 10000;
+    public static Vector3 tmpMax = Vector3.one * -10000;
+
     public static List<string> linesOfStl = new List<string>();
     public GameObject button;
     public GameObject onlineButton;
@@ -25,6 +30,7 @@ public class camScript : MonoBehaviour
     public static string baseUrl = "http://www.ftllabscorp.com/VR/";
     private GameObject _cursor;
     public static MakeMesh MM;
+    public ObjInterpreter objI;
 
     public GameObject mainMenu;
     public static GameObject folderWindow;
@@ -50,6 +56,8 @@ public class camScript : MonoBehaviour
     bool Online = false;
     public static List<string> history = new List<string>();
     public Text browseLabel;
+
+    public static Color stlColor = new Color(1f,1f,1f,1f);
 
     public GameObject loginPanel;
     public InputField usernameBox;
@@ -175,6 +183,21 @@ public class camScript : MonoBehaviour
         var rot = new Quaternion(0, 0, 0, 0);
         _cursor.transform.position = pos;
         _cursor.transform.localRotation = rot;
+    }
+
+
+    public void Generate()
+    {
+        MM.ClearAll();
+        MM.Begin();
+        foreach (var tri in triangleList)
+        {
+            SetMaxMin(tri.p1);
+            SetMaxMin(tri.p2);
+            SetMaxMin(tri.p3);
+            MM.AddTriangle(tri.p1, tri.p2, tri.p3, tri.norm, tri._binary);
+        }
+        MM.MergeMesh();
     }
 
     void ShowPanel()
@@ -389,7 +412,7 @@ public class camScript : MonoBehaviour
         var filenames = new List<string>();
         foreach (var fna in filenamesList)
         {
-            if (fna.EndsWith(".STL") || fna.EndsWith(".stl"))
+            if (fna.ToLower().EndsWith(".stl") || fna.ToLower().EndsWith(".obj"))
                 filenames.Add(fna);
         }
         var numFiles = filenames.Count;
@@ -429,6 +452,11 @@ public class camScript : MonoBehaviour
 
     public void loadFile(string fileName)
     {
+        if (fileName.ToLower().EndsWith(".obj"))
+        {
+            objI.GO(fileName, false);
+            return;
+        }
         stlInterpreter.ClearAll();
         linesOfStl.Clear();
         phpConn.ClearAll();
@@ -463,6 +491,11 @@ public class camScript : MonoBehaviour
 
     public void loadFileFromWeb(string fileName)
     {
+        if (fileName.ToLower().EndsWith(".obj"))
+        {
+            objI.GO(fileName, true);
+            return;
+        }
         stlInterpreter.ClearAll();
         linesOfStl.Clear();
         phpConn.ClearAll();
@@ -642,5 +675,33 @@ public class camScript : MonoBehaviour
         var pos = m.transform.position;
         pos.z = s;
         m.transform.position = pos;
+    }
+
+    public void SetMaxMin(Vector3 vert)
+    {
+        var max = Max;
+        var min = Min;
+        if (vert.x > Max.x) max.x = vert.x;
+        if (vert.x < Min.x) min.x = vert.x;
+        if (vert.y > Max.y) max.y = vert.y;
+        if (vert.y < Min.y) min.y = vert.y;
+        if (vert.z > Max.z) max.z = vert.z;
+        if (vert.z < Min.z) min.z = vert.z;
+        Max = max;
+        Min = min;
+    }
+
+    public void TmpSetMaxMin(Vector3 vert)
+    {
+        var max = tmpMax;
+        var min = tmpMin;
+        if (vert.x > max.x) max.x = vert.x;
+        if (vert.x < min.x) min.x = vert.x;
+        if (vert.y > max.y) max.y = vert.y;
+        if (vert.y < min.y) min.y = vert.y;
+        if (vert.z > max.z) max.z = vert.z;
+        if (vert.z < min.z) min.z = vert.z;
+        tmpMax = max;
+        tmpMin = min;
     }
 }

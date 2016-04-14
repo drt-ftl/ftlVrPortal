@@ -27,7 +27,7 @@ public class LoadFile : MonoBehaviour
 	public static List<string> stlCode = new List<string>();
 	public static bool stlCodeLoaded = false;
     public static Transform stlHolder;
-    private enum Type {STL,DMC,JOB,GCD,AMF,CS,CCT}
+    private enum Type {STL,OBJ,DMC,JOB,GCD,AMF,CS,CCT}
 	private Type type;
 	public static float stlScale = 1f;
     public static float runTime = 0;
@@ -79,8 +79,12 @@ public class LoadFile : MonoBehaviour
 			try
 			{
 				var fileName = openFileDialog.FileName;
-				if (fileName.EndsWith("STL"))
+				if (fileName.ToLower().EndsWith("stl"))
 					type = Type.STL;
+                if (fileName.ToLower().EndsWith("obj"))
+                {
+                    type = Type.OBJ;
+                }
                 if (fileName != null)
 				{
 					var reader = new StreamReader(fileName);
